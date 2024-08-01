@@ -68,7 +68,7 @@ def mes_terapeuta(csv):
         for ii in l_servicios:
             servicio = terapeuta[terapeuta['Concepto'] == ii]
             sesiones = servicio.shape[0]
-            debes = servicio['Debe'].sum()
+            debes = -(servicio['Debe'].sum())
             sesiones_prof[ii] = [sesiones,debes]
         sesiones = terapeuta.shape[0]
         debes = -(terapeuta['Debe'].sum())
