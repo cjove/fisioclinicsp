@@ -74,7 +74,7 @@ def mes_terapeuta(csv):
         debes = terapeuta['Debe'].sum()
         p_sesion = terapeuta['P. sesión'].sum()
         
-        resultados[i] =[-debes,sesiones,sesiones_prof,p_sesion]
+        resultados[i] =[debes,sesiones,sesiones_prof,p_sesion]
         
     return (resultados)
 
