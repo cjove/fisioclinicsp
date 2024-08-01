@@ -143,6 +143,7 @@ try:
         metodo_data.append(df_metodo)
         df_servicio = pd.DataFrame.from_dict(mes_s, orient = 'index', columns = ['Importe', 'Nº Sesiones'])
         df_servicio.insert(0, "Mes", [i]*df_servicio.shape[0], True)
+        servicio_data.append(df_servicio)
         
         for ii in mes_t.keys():
             prof = mes_t[ii]
@@ -166,6 +167,7 @@ try:
     df_sesion =  pd.concat(sesion_data, axis=0)
     df_sesion = df_sesion.reset_index()
     df_sesion = df_sesion.rename(columns={'index': 'Sesión'})
+    df_servicio = pd.concat(servicio_data, axis=0)
     df_servicio = df_servicio.reset_index()
     df_servicio = df_servicio.rename(columns={'index': 'Sesión'})
     
