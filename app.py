@@ -86,7 +86,7 @@ def ingreso_servicio (csv):
     for i in l_servicios:
         servicio = csv[csv['Concepto'] == i]
         sesiones = servicio.shape[0]
-        debes = servicio['Debe'].sum()
+        debes = -(servicio['Debe'].sum())
         resultados[i] =[debes,sesiones]
         
     return (resultados)
